@@ -45,7 +45,7 @@ public class HomeController {
 
         return JSON.createObjectBuilder()
                 .add("message1", "hello world")
-                .add("message2", injectedValue)
+                .add("injected value", injectedValue)
                 .build();
     }
 
