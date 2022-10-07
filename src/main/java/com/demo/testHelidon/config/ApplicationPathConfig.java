@@ -28,15 +28,15 @@ import java.util.Set;
 @ApplicationPath("/AEKCOM")
 @ApplicationScoped
 public class ApplicationPathConfig extends Application {
-    @Override
-    public Set<Class<?>> getClasses() {
-
-        Set<Class<?>> classes = new HashSet<>();
-
-        // resources
-        classes.add(HomeController.class);
-        classes.add(Home2Controller.class);
-
-        return classes;
-    }
+//    @Override
+//    public Set<Class<?>> getClasses() {
+//
+//        Set<Class<?>> classes = new HashSet<>();
+//
+//        // resources
+//        classes.add(HomeController.class);
+//        classes.add(Home2Controller.class);
+//
+//        return classes;
+//    }
 }
