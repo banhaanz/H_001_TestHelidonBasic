@@ -18,7 +18,6 @@ public class UserProperties {
     private String username2;
     private String username3;
     private String username4;
-    private String username5;
     private int age;
     private boolean workFlag;
 
@@ -26,10 +25,9 @@ public class UserProperties {
         Properties dbProperties = ResourceUtil.getProperties("db.properties");
         User yaml = ResourceUtil.getYaml("test.yaml", User.class);
         this.username = ConfigProvider.getConfig().getValue("user1.username", String.class);
-//        this.username2 = ConfigProvider.getConfig().getValue("user2.username", String.class);
-        this.username3 = ConfigProvider.getConfig().getValue("user3.username", String.class);
-        this.username4 = dbProperties.getProperty("user4.username");
-        this.username5 = yaml.getUser5("name.username");
+        this.username2 = ConfigProvider.getConfig().getValue("user2.username", String.class);
+        this.username3 = dbProperties.getProperty("user3.username");
+        this.username4 = yaml.getUser4("name.username");
         this.age = ConfigProvider.getConfig().getValue("user1.age", Integer.class);
         this.workFlag = ConfigProvider.getConfig().getValue("user1.workFlag", Boolean.class);
     }

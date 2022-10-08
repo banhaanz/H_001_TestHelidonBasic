@@ -14,12 +14,12 @@ import java.util.Map;
 public class User {
     @Schema(required = true, description = "username")
     private String username;
-    private Map<String, Map<String, String>> user5;
+    private Map<String, Map<String, String>> user4;
     private int age;
     private boolean workFlag;
 
-    public String getUser5(String keyName){
+    public String getUser4(String keyName){
         String[] strArr = keyName.split("\\.");
-        return this.getUser5().get(strArr[0]).get(strArr[1]);
+        return this.getUser4().get(strArr[0]).get(strArr[1]);
     }
 }
