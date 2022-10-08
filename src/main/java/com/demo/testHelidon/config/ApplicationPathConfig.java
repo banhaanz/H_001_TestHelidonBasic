@@ -1,7 +1,6 @@
 package com.demo.testHelidon.config;
 
 import com.demo.testHelidon.controller.HomeController;
-import com.demo.testHelidon.properties.UserProperties;
 import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import org.eclipse.microprofile.openapi.annotations.info.Contact;
 import org.eclipse.microprofile.openapi.annotations.info.Info;
@@ -28,15 +27,14 @@ import java.util.Set;
 @ApplicationPath("/AEKCOM")
 @ApplicationScoped
 public class ApplicationPathConfig extends Application {
-    @Override
-    public Set<Class<?>> getClasses() {
-
-        Set<Class<?>> classes = new HashSet<>();
-
-        // resources
-        classes.add(HomeController.class);
-        classes.add(UserProperties.class);
-
-        return classes;
-    }
+//    @Override
+//    public Set<Class<?>> getClasses() {
+//
+//        Set<Class<?>> classes = new HashSet<>();
+//
+//        // resources
+//        classes.add(HomeController.class);
+//
+//        return classes;
+//    }
 }
