@@ -1,0 +1,13 @@
+#not use for Helidon!!!
+user3:
+  username: aekkkkkkkkk
+
+javax:
+  sql:
+    DataSource:
+      naosDataSource:
+        dataSourceClassName: oracle.jdbc.pool.OracleDataSource
+        dataSource:
+          url: jdbc:oracle:thin:@10.202.104.248:1651:CAPDB01D
+          user: CHP
+          password: Passw0rd
