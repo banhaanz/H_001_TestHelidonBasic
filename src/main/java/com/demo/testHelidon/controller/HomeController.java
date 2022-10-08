@@ -63,23 +63,15 @@ public class HomeController {
 
     /* Test openApi */
     @APIResponses(value = {
-            @APIResponse(responseCode = "200", description = "Get User data success."
-//                    , content = @Content(
-//                            mediaType = MediaType.APPLICATION_JSON
-//                            , schema = @Schema(ref = "User"))
-            )
+            @APIResponse(responseCode = "200", description = "Get User data success.")
             , @APIResponse(responseCode = "404", description = "User data not found.")
     })
     @GET @Path("/testOpenApi")
     @Produces(MediaType.APPLICATION_JSON)
     public Response testOpenApi() {
         log.info("===== Enter testOpenApi ====");
-
         log.info("username1 , default.properties: {}", userProp.getUsername());
-        log.info("username2 , application.properties: {}", userProp.getUsername2());
         log.info("username3 , application.yaml: {}", userProp.getUsername3());
-        log.info("username4 , db.properties: {}", userProp.getUsername4());
-        log.info("username5 , test.yaml: {}", userProp.getUsername5());
         return Response
                 .status(Response.Status.OK)
                 .entity(new User())
