@@ -1,5 +1,6 @@
 package com.demo.testHelidon.controller;
 
+import com.demo.testHelidon.entity.TbMApplicationType;
 import com.demo.testHelidon.model.User;
 import com.demo.testHelidon.properties.UserProperties;
 import com.demo.testHelidon.service.ApplicationService;
@@ -24,6 +25,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.Collections;
+import java.util.List;
 
 @Slf4j
 @Path("/home")
@@ -82,10 +84,11 @@ public class HomeController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response testPost() {
         log.info("===== Enter testPost ====");
-        log.info("data: {}", applicationService.getAllApplicationType());
+        List<TbMApplicationType> tbMApplicationTypeList = applicationService.getAllApplicationType();
+        log.info("data: {}", tbMApplicationTypeList);
         return Response
                 .status(Response.Status.OK)
-                .entity(new User())
+                .entity(tbMApplicationTypeList)
                 .build();
     }
 }
