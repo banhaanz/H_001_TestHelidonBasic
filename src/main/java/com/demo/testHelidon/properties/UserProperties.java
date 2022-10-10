@@ -1,12 +1,10 @@
 package com.demo.testHelidon.properties;
 
-import com.demo.testHelidon.model.User;
-import com.demo.testHelidon.util.ResourceUtil;
 import lombok.Data;
-import org.eclipse.microprofile.config.ConfigProvider;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.enterprise.context.RequestScoped;
-import java.util.Properties;
+import javax.inject.Inject;
 
 
 @Data
@@ -14,15 +12,16 @@ import java.util.Properties;
 //@ConfigProperties(prefix = "user1.")
 public class UserProperties {
 
+    @Inject @ConfigProperty(name = "user1.username")
     private String username;
+
+    @Inject @ConfigProperty(name = "user3.username")
     private String username3;
+
+    @Inject @ConfigProperty(name = "user1.age")
     private int age;
+
+    @Inject @ConfigProperty(name = "user1.workFlag")
     private boolean workFlag;
 
-    public UserProperties(){
-        this.username = ConfigProvider.getConfig().getValue("user1.username", String.class);
-        this.username3 = ConfigProvider.getConfig().getValue("user3.username", String.class);
-        this.age = ConfigProvider.getConfig().getValue("user1.age", Integer.class);
-        this.workFlag = ConfigProvider.getConfig().getValue("user1.workFlag", Boolean.class);
-    }
 }

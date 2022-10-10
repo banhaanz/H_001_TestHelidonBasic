@@ -9,14 +9,10 @@ import java.util.List;
 
 @ApplicationScoped
 public class ApplicationService {
-    private final TbMApplicationTypeRepository tbMApplicationTypeRepository;
-
     @Inject
-    public ApplicationService(TbMApplicationTypeRepository repository){
-        this.tbMApplicationTypeRepository = repository;
-    }
+    private TbMApplicationTypeRepository tbMApplicationTypeRepository;
 
-    public List<TbMApplicationType> getAllAirports() {
+    public List<TbMApplicationType> getAllApplicationType() {
         return tbMApplicationTypeRepository.getAllData();
     }
 }

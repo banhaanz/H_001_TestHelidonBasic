@@ -82,7 +82,7 @@ public class HomeController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response testPost() {
         log.info("===== Enter testPost ====");
-        log.info("data: {}", applicationService.getAllAirports());
+        log.info("data: {}", applicationService.getAllApplicationType());
         return Response
                 .status(Response.Status.OK)
                 .entity(new User())
