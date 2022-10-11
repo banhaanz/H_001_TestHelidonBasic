@@ -14,16 +14,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 @OpenAPIDefinition(info = @Info(
-        title = "Example application",
+        title = "Helidon-Service",
         version = "1.0.0",
         contact = @Contact(
-                name = "AEKCOM",
-                email = "aekcom@aekcom.com",
-                url = "http://www.aekcom.com")
+                name = "Helidon-serivce",
+                email = "helidon_serivce@mail.com",
+                url = "http://www.helidon-serivce.com")
 ),
-        servers = {
-                @Server(url = "/",description = "localhost")
-        }
+        servers = @Server(url = "http://localhost:8085", description = "Helidon Service")
 )
 @ApplicationPath("/AEKCOM")
 @ApplicationScoped
@@ -39,4 +37,6 @@ public class ApplicationPathConfig extends Application {
 //
 //        return classes;
 //    }
+
+
 }
