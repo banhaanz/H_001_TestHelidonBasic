@@ -3,32 +3,31 @@ package com.demo.testHelidon.properties;
 import com.demo.testHelidon.model.User;
 import com.demo.testHelidon.util.ResourceUtil;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.eclipse.microprofile.config.ConfigProvider;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import java.util.Properties;
 
 
 @Data
+@NoArgsConstructor
 @RequestScoped
 //@ConfigProperties(prefix = "user1.")
 public class UserProperties {
 
+    @Inject @ConfigProperty(name = "user1.username")
     private String username;
+    @Inject @ConfigProperty(name = "user2.username")
     private String username2;
+    @Inject @ConfigProperty(name = "user3.username")
     private String username3;
+    @Inject @ConfigProperty(name = "user4.name.username")
     private String username4;
+    @Inject @ConfigProperty(name = "user1.age")
     private int age;
+    @Inject @ConfigProperty(name = "user1.workFlag")
     private boolean workFlag;
-
-    public UserProperties(){
-        Properties dbProperties = ResourceUtil.getProperties("db.properties");
-        User yaml = ResourceUtil.getYaml("test.yaml", User.class);
-        this.username = ConfigProvider.getConfig().getValue("user1.username", String.class);
-        this.username2 = ConfigProvider.getConfig().getValue("user2.username", String.class);
-        this.username3 = dbProperties.getProperty("user3.username");
-        this.username4 = yaml.getUser4("name.username");
-        this.age = ConfigProvider.getConfig().getValue("user1.age", Integer.class);
-        this.workFlag = ConfigProvider.getConfig().getValue("user1.workFlag", Boolean.class);
-    }
 }
